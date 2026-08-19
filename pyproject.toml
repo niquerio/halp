@@ -1,0 +1,27 @@
+[project]
+name = "halp"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Monique Rio",email = "mrio@umich.edu"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "typer (>=0.27.1,<0.28.0)"
+]
+
+[tool.poetry]
+packages = [{include = "halp", from = "src"}]
+
+[tool.poetry.scripts]
+halp = "halp.main:app"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)"
+]

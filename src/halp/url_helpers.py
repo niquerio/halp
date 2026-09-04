@@ -1,4 +1,4 @@
-from urllib.parse import urlsplit, parse_qs
+from urllib.parse import urlsplit, parse_qs, quote_plus
 
 
 def make_url_readable(url: str):
@@ -9,3 +9,7 @@ def make_url_readable(url: str):
     }
 
     return result
+
+
+def url_encode_string(string: str):
+    return quote_plus(string)

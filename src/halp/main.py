@@ -1,4 +1,4 @@
-from halp.make_url_readable import make_url_readable as make_it_readable
+from halp import url_helpers
 from halp import replace_image as replace_image_functions
 import json
 from typing import Annotated
@@ -11,7 +11,12 @@ app = typer.Typer()
 
 @app.command()
 def make_url_readable(url: str):
-    print(json.dumps(make_it_readable(url), indent=2))
+    print(json.dumps(url_helpers.make_url_readable(url), indent=2))
+
+
+@app.command()
+def url_encode_string(string: str):
+    print(url_helpers.url_encode_string(string))
 
 
 @app.command()

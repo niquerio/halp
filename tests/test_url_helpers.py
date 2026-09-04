@@ -1,5 +1,4 @@
-from halp.make_url_readable import make_url_readable
-import pytest
+from halp.url_helpers import make_url_readable, url_encode_string
 
 
 def test_make_url_readable():
@@ -28,3 +27,7 @@ def test_make_url_readable_more_complicated():
             "vid": ["01UMICH_INST:UMICH"],
         },
     }
+
+
+def test_url_encode_string():
+    assert url_encode_string("[1500 TO 1500]") == "%5B1500+TO+1500%5D"
